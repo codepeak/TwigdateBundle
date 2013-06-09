@@ -118,12 +118,13 @@ class DateExtension extends \Twig_Extension
             ), $lowercase);
         }
 
-        return $seconds;
-
-
-        // Check if time is less than 60 seconds ago
-        return 'hej';
-
+        // Return the years
+        return $this->fixCase($this->getTranslator()->trans(
+            '%years% ago',
+            array(
+                '%years%' => round(($seconds / 31536000), 0)
+            )
+        ), $lowercase);
     }
 
     /**
