@@ -1,0 +1,7 @@
+services:
+    codepeak_twigdate.nice:
+        class: Codepeak\TwigdateBundle\Twig\DateExtension
+        arguments:
+            translator: "@translator"
+        tags:
+            - { name: twig.extension }
